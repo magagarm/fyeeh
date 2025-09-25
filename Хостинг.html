@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HostingMaster.com.ua — Free Hosting Guide</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9aa6b2}
+    body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071020 0%,#081226 100%);color:#e6eef6;margin:0;padding:32px}
+    .container{max-width:980px;margin:0 auto}
+    header{display:flex;align-items:center;gap:16px}
+    header h1{margin:0;font-size:1.6rem}
+    p.lead{color:var(--muted);margin-top:6px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:20px}
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 20px rgba(2,6,23,.6)}
+    .host{border-left:4px solid transparent;padding:12px;margin-bottom:12px}
+    .host h3{margin:0 0 6px 0}
+    .host p{margin:0;color:var(--muted)}
+    button{background:var(--accent);border:0;padding:8px 12px;border-radius:8px;color:#04202a;cursor:pointer;font-weight:600}
+    .steps{margin-top:10px;padding:12px;background:#061523;border-radius:8px;color:#cfeff6;font-family:monospace;font-size:0.9rem;display:none}
+    .small{font-size:0.9rem;color:var(--muted)}
+    pre{white-space:pre-wrap;word-break:break-word}
+    .rhs .card{position:sticky;top:20px}
+    .copy{margin-left:8px;padding:6px 8px;font-size:0.9rem}
+    footer{margin-top:26px;color:var(--muted);font-size:0.9rem;text-align:center;padding:20px 0;border-top:1px solid #1e2a3a}
+    .demo{background:#04121b;padding:12px;border-radius:10px;margin-top:14px}
+    .download{background:transparent;border:1px dashed var(--muted);color:var(--muted);padding:8px;border-radius:8px;cursor:pointer}
+    .tag{display:inline-block;background:#082a2f;color:#a8f0f8;padding:4px 8px;border-radius:8px;font-weight:600;margin-right:8px}
+    .quiz{margin-top:30px;background:var(--card);padding:20px;border-radius:12px}
+    .quiz h2{margin-top:0}
+    .question{margin-bottom:20px;padding-bottom:15px;border-bottom:1px solid #1e2a3a}
+    .question:last-child{border-bottom:none}
+    .options label{display:block;margin:8px 0;cursor:pointer}
+    .options input{margin-right:8px}
+    .submit-btn{background:var(--accent);color:#04202a;border:none;padding:10px 20px;border-radius:8px;cursor:pointer;font-weight:600;margin-top:10px}
+    .result{margin-top:15px;padding:10px;border-radius:8px;display:none}
+    .success{background:#0f2a1d;color:#4ade80;border:1px solid #4ade80}
+    .error{background:#2a1a1a;color:#f87171;border:1px solid #f87171}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>HostingMaster.com.ua — Як розмістити сайт безкоштовно</h1>
+        <p class="lead">Демонстраційний односторінковий сайт: HTML / CSS / JS + кроки для розгортання на GitHub Pages, Netlify та Vercel.</p>
+      </div>
+    </header>
+
+    <div class="grid">
+      <main>
+        <div class="card">
+          <div class="tag">Статичний сайт</div>
+          <h2>Як це працює</h2>
+          <p class="small">Цей сайт показує: приклад коду, короткі команди для підготовки репозиторію та автоматичні кроки для популярних безплатних хостингів.</p>
+
+          <section style="margin-top:12px">
+            <h3>Швидкий приклад коду</h3>
+            <div class="demo">
+              <h4 id="demoTitle">Welcome to Free Hosting!</h4>
+              <p id="demoText">Це демо-секція. Змінюйте текст у полі нижче та натисніть застосувати.</p>
+              <input id="titleIn" placeholder="Заголовок" style="width:100%;padding:8px;margin-top:8px;border-radius:6px;border:1px solid #18323b;background:#031217;color:#e6eef6">
+              <input id="textIn" placeholder="Опис" style="width:100%;padding:8px;margin-top:8px;border-radius:6px;border:1px solid #18323b;background:#031217;color:#e6eef6">
+              <div style="margin-top:10px;display:flex;gap:8px">
+                <button id="applyBtn">Застосувати</button>
+                <button id="downloadBtn" class="download">Завантажити index.html</button>
+              </div>
+            </div>
+          </section>
+
+          <section style="margin-top:16px">
+            <h3>Готові команди (термінал)</h3>
+            <div class="small" style="margin-top:8px">
+              <pre id="commands">mkdir mysite
+cd mysite
+# додайте файли: index.html, styles.css, script.js
+git init
+git add .
+git commit -m "Initial"
+git branch -M main
+git remote add origin https://github.com/ВАШ_КОРИСТУВАЧ/ВАШ_РЕПО.git
+git push -u origin main
+</pre>
+              <button class="copy" data-target="commands">Копіювати</button>
+            </div>
+          </section>
+        </div>
+
+        <div class="quiz card">
+          <h2>Тест: Що ви знаєте про хостинг?</h2>
+          <form id="hostingQuiz">
+            <div class="question">
+              <p><strong>1. Що таке статичний хостинг?</strong></p>
+              <div class="options">
+                <label><input type="radio" name="q1" value="a"> Хостинг для динамічних сайтів на PHP</label>
+                <label><input type="radio" name="q1" value="b"> Хостинг лише для HTML, CSS, JS файлів</label>
+                <label><input type="radio" name="q1" value="c"> Хостинг з підтримкою баз даних</label>
+              </div>
+            </div>
+
+            <div class="question">
+              <p><strong>2. Який з перелічених хостингів є безкоштовним?</strong></p>
+              <div class="options">
+                <label><input type="radio" name="q2" value="a"> GitHub Pages</label>
+                <label><input type="radio" name="q2" value="b"> Amazon AWS</label>
+                <label><input type="radio" name="q2" value="c"> Microsoft Azure</label>
+              </div>
+            </div>
+
+            <div class="question">
+              <p><strong>3. Що потрібно для розгортання на GitHub Pages?</strong></p>
+              <div class="options">
+                <label><input type="radio" name="q3" value="a"> Встановити локальний сервер</label>
+                <label><input type="radio" name="q3" value="b"> Мати репозиторій з файлами сайту</label>
+                <label><input type="radio" name="q3" value="c"> Купити доменне ім'я</label>
+              </div>
+            </div>
+
+            <div class="question">
+              <p><strong>4. Яка платформа пропонує "Drag & Drop" деплой?</strong></p>
+              <div class="options">
+                <label><input type="radio" name="q4" value="a"> Vercel</label>
+                <label><input type="radio" name="q4" value="b"> Netlify</label>
+                <label><input type="radio" name="q4" value="c"> GitHub Pages</label>
+              </div>
+            </div>
+
+            <div class="question">
+              <p><strong>5. Що таке CI/CD у контексті хостингу?</strong></p>
+              <div class="options">
+                <label><input type="radio" name="q5" value="a"> Інструмент для створення анімацій</label>
+                <label><input type="radio" name="q5" value="b"> Безперервна інтеграція та доставка</label>
+                <label><input type="radio" name="q5" value="c"> Система керування базами даних</label>
+              </div>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="checkQuiz()">Перевірити відповіді</button>
+            <div id="quizResult" class="result"></div>
+          </form>
+        </div>
+      </main>
+
+      <aside class="rhs">
+        <div class="card">
+          <h2>Безплатні хости — Кроки</h2>
+
+          <div class="host" id="gh">
+            <h3>GitHub Pages</h3>
+            <p>Публікує статичні сайти з репозиторію GitHub. Підтримує автоматичну збірку через GitHub Actions або пряме розгортання з гілки.</p>
+            <div style="margin-top:8px">
+              <button onclick="toggle('steps-gh')">Показати кроки</button>
+            </div>
+            <div id="steps-gh" class="steps">
+              1) Створіть репозиторій на GitHub.
+              2) Завантажте index.html (push).
+              3) У Settings → Pages оберіть гілку (main) як джерело.
+              4) Сайт буде доступний за https://USERNAME.github.io/REPO.
+            </div>
+          </div>
+
+          <div class="host" id="netlify">
+            <h3>Netlify</h3>
+            <p>Підключіть репозиторію або перетягніть папку з готовими файлами (Netlify Drop). Має безкоштовний тариф з CI/CD.</p>
+            <div style="margin-top:8px">
+              <button onclick="toggle('steps-net')">Показати кроки</button>
+            </div>
+            <div id="steps-net" class="steps">
+              1) Увійдіть на netlify.com і натисніть "Add new site" → "Import from Git" або "Drag & Drop".
+              2) Дайте дозвіл на доступ до репозиторію.
+              3) Налаштуйте build command (якщо потрібен) і publish directory (наприклад, /).
+              4) Netlify створить live сайт з власним доменом, наприклад https://glittering-moth-123.netlify.app
+            </div>
+          </div>
+
+          <div class="host" id="vercel">
+            <h3>Vercel</h3>
+            <p>Добре підходить для сучасних фреймворків; дуже просте підключення репозиторію та CLI для швидкого деплою.</p>
+            <div style="margin-top:8px">
+              <button onclick="toggle('steps-ver')">Показати кроки</button>
+            </div>
+            <div id="steps-ver" class="steps">
+              1) Зареєструйтесь на vercel.com та підключіть GitHub.
+              2) Імпортуйте репозиторій (Add New Project).
+              3) Налаштуйте (Vercel автоматично вгадує framework). Натисніть Deploy.
+              4) Отримаєте адресу виду https://your-site.vercel.app
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div>HostingMaster.com.ua &copy; 2023 — Безкоштовні посібники з хостингу та розгортання веб-сайтів</div>
+      <div class="small" style="margin-top:8px">Порада: використовуйте власний домен через налаштування хоста, або залишайте безкоштовний subdomain від платформи.</div>
+    </footer>
+  </div>
+
+  <script>
+    // UI handlers
+    function toggle(id){
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'block' ? 'none' : 'block';
+    }
+
+    document.getElementById('applyBtn').addEventListener('click', ()=>{
+      const t = document.getElementById('titleIn').value || 'Welcome to Free Hosting!';
+      const d = document.getElementById('textIn').value || 'Це демо-секція.';
+      document.getElementById('demoTitle').textContent = t;
+      document.getElementById('demoText').textContent = d;
+    });
+
+    // copy buttons
+    document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', e=>{
+      const target = document.getElementById(e.currentTarget.dataset.target);
+      navigator.clipboard.writeText(target.innerText).then(()=>{
+        e.currentTarget.textContent = 'Скопійовано!';
+        setTimeout(()=> e.currentTarget.textContent = 'Копіювати',1500);
+      });
+    }));
+
+    // download index.html (simple)
+    document.getElementById('downloadBtn').addEventListener('click', ()=>{
+      const html = `<!doctype html>\n<html>\n<head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>My Site</title></head>\n<body>\n<h1>${escapeHtml(document.getElementById('demoTitle').textContent)}</h1>\n<p>${escapeHtml(document.getElementById('demoText').textContent)}</p>\n</body>\n</html>`;
+      const blob = new Blob([html], {type: 'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'index.html'; document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+
+    function escapeHtml(s){return s.replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;');}
+
+    // Quiz functionality
+    function checkQuiz() {
+      const answers = {
+        q1: 'b',
+        q2: 'a',
+        q3: 'b',
+        q4: 'b',
+        q5: 'b'
+      };
+      
+      let score = 0;
+      const totalQuestions = Object.keys(answers).length;
+      
+      for (const question in answers) {
+        const selected = document.querySelector(`input[name="${question}"]:checked`);
+        if (selected && selected.value === answers[question]) {
+          score++;
+        }
+      }
+      
+      const resultElement = document.getElementById('quizResult');
+      resultElement.style.display = 'block';
+      
+      if (score === totalQuestions) {
+        resultElement.className = 'result success';
+        resultElement.innerHTML = `<strong>Вітаємо! ${score}/${totalQuestions}</strong> Ви чудово знаєте тему хостингу!`;
+      } else {
+        resultElement.className = 'result error';
+        resultElement.innerHTML = `<strong>Результат: ${score}/${totalQuestions}</strong> Спробуйте ще раз!`;
+      }
+    }
+  </script>
+</body>
+</html>
